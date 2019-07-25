@@ -17,7 +17,6 @@ public class StepDefinitions {
 		}
 	}
 
-	
 	@Given("^User open the application$")
 	public void user_open_the_application() throws Throwable {
 		sf.openApplication();
@@ -32,7 +31,7 @@ public class StepDefinitions {
 	public void enter_Flying_from_domestic_location(String location) {
 		sf.enterFlyingFromLocation(location);
 	}
-	
+
 	@When("^Enter Flying to \"([^\"]*)\" domestic location$")
 	public void enter_Flying_to_domestic_location(String location) {
 		sf.enterFlyingToLocation(location);
@@ -50,27 +49,28 @@ public class StepDefinitions {
 
 	@When("^Sort by cheapest flight$")
 	public void sort_by_cheapest_flight() throws Throwable {
-
+		sf.sortByCheapestFlight();
 	}
 
 	@When("^Select cheapest flight$")
 	public void select_cheapest_flight() throws Throwable {
-
+		sf.selectCheapestFlight();
 	}
 
 	@Then("^Verify that the total fare is displaying correctly$")
 	public void verify_that_the_total_fare_is_displaying_correctly() throws Throwable {
-
+		sf.verifyTotalFareisDisplayingCorrectly();
 	}
 
-	@Then("^Verify that the the page is responding with in (\\d+)\\.(\\d+) seconds$")
-	public void verify_that_the_the_page_is_responding_with_in_seconds(int arg1, int arg2) throws Throwable {
-
+	@Then("^Verify that the the page is responding with in \"([^\\\"]*)\" seconds$")
+	public void verify_that_the_the_page_is_responding_with_in_seconds(double time) throws Throwable {
+		sf.verifyPageisRespondingWithinTime(time);
 	}
 
 	@Then("^Verify that If user leaves page for (\\d+) minutes then Session Expire message is displaying$")
-	public void verify_that_If_user_leaves_page_for_minutes_then_Session_Expire_message_is_displaying(int arg1) throws Throwable {
-
+	public void verify_that_If_user_leaves_page_for_minutes_then_Session_Expire_message_is_displaying(int timeinMin)
+			throws Throwable {
+		sf.verifySessionExpiryMessageisDisplaying(timeinMin);
 	}
 
 }
