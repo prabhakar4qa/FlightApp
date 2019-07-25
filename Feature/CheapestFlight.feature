@@ -17,9 +17,9 @@ Feature: Domestic Flights booking
     When Sort by cheapest flight
     And Select cheapest flight
     Then Verify that the total fare is displaying correctly
-    And Verify that the the page is responding with in 3.5 seconds
+    And Verify that the the page is responding with in "<Time>" seconds
     And Verify that If user leaves page for 5 minutes then Session Expire message is displaying
     
     Examples: 
-      |From     |To         |
-      |Auckland |Wellington |
+      |From     |To         |Time|
+      |Auckland	|Wellington	|3.5 |
